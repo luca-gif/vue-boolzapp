@@ -1,6 +1,7 @@
-/* const root = new Vue({
+const root = new Vue({
     el: "#root",
     data: {
+        indice: 0,
         users: [{
                 name: "Michele",
                 avatar: "_1",
@@ -156,4 +157,4 @@
             },
         ],
     },
-}); */
+});

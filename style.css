@@ -5,36 +5,20 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Lato', sans-serif;
 }
 
-
-/* debug */
-
-.debug {
-    background-color: rgba(255, 0, 0, .3);
-    border: 1px solid black;
-}
-
-
-/* debug */
-
-header {
-    height: 20vh;
-    background-color: #228f82;
-}
-
-main {
-    height: 80vh;
-    background-color: #d8dbd7;
+.wrapper {
+    background-image: linear-gradient(#009688, #d6dbd8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
     display: flex;
     background-color: #fff;
-    position: absolute;
-    top: 20px;
-    left: 10%;
     width: 80%;
     height: 95%;
 }
@@ -98,14 +82,14 @@ aside .aside-top .search input::placeholder {
 
 aside .aside-top .search i {
     position: absolute;
-    left: 30px;
+    left: 180px;
     color: #b1b1b1;
 }
 
 aside .user-list {
     height: calc(100% - 170px);
     background-color: #fff;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 aside .user-list li {
@@ -135,14 +119,33 @@ section {
 }
 
 section .main-section {
-    height: calc(100% - 120px);
+    height: calc(100% - 115px);
     background-image: url(./img/mine.jpg);
-    overflow: scroll;
 }
 
 section .section-chat {
-    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
     background-color: #f3eeea;
+}
+
+section .section-chat input {
+    width: 80%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+section .section-chat input::placeholder {
+    font-size: 12px;
+}
+
+section .section-chat i {
+    padding: 0 40px;
+    color: grey;
+    font-size: 20px;
 }
 
 img {

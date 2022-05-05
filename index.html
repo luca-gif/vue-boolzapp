@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css' integrity='sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==' crossorigin='anonymous' />
     <title>Boolzap</title>
     <link rel="stylesheet" href="style.css">
@@ -14,10 +17,7 @@
 
 <body>
 
-    <div id="root">
-
-        <header></header>
-        <main></main>
+    <div id="root" class="wrapper">
 
         <div class="container">
 
@@ -54,15 +54,15 @@
                 </div>
 
                 <div class="user-list">
-
                     <ul>
-                        <li>
+
+                        <li v-for="(user,index) in users">
                             <div class="user-logo">
 
-                                <img src="./img/avatar_1.jpg" alt="user logo">
+                                <img :src=`img/avatar${users[indice].avatar}.jpg` alt="user logo">
 
                                 <div class="nav-name">
-                                    <span>Michele</span>
+                                    <span>{{user.name}}</span>
                                     <span class="subtitle">Ultimo messaggio inviato</span>
                                 </div>
                             </div>
@@ -70,106 +70,8 @@
                                 12:00
                             </div>
                         </li>
-                        <li>
-                            <div class="user-logo">
 
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-logo">
-
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-logo">
-
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-logo">
-
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-logo">
-
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-logo">
-
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
-                        <li>
-                            <div class="user-logo">
-
-                                <img src="./img/avatar_1.jpg" alt="user logo">
-
-                                <div class="nav-name">
-                                    <span>Michele</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
-                                </div>
-                            </div>
-                            <div class="orario subtitle">
-                                12:00
-                            </div>
-                        </li>
                     </ul>
-
                 </div>
 
             </aside>
@@ -201,6 +103,16 @@
                 </div>
 
                 <div class="section-chat">
+
+                    <div class="left-section">
+                        <i class="fa-regular fa-face-smile"></i>
+                    </div>
+
+                    <input type="text" placeholder="Scrivi un messaggio">
+
+                    <div class="right-section">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
 
                 </div>
 
