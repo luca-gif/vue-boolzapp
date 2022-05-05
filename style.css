@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* debug */
+
+.debug {
+    background-color: rgba(255, 0, 0, .3);
+    border: 1px solid black;
+}
+
+
+/* debug */
+
+header {
+    height: 20vh;
+    background-color: #228f82;
+}
+
+main {
+    height: 80vh;
+    background-color: #d8dbd7;
+}
+
+.container {
+    display: flex;
+    background-color: #fff;
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 80%;
+    height: 95%;
+}
+
+.container .nav {
+    height: 60px;
+    background-color: #eaeaea;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+aside {
+    width: 35%;
+    height: 100%;
+}
+
+aside .aside-top {
+    height: 110px;
+}
+
+aside .user-list {
+    height: calc(100% - 170px);
+    background-color: #fff;
+    overflow: auto;
+}
+
+section {
+    height: 100%;
+    width: 65%;
+}
+
+section .main-section {
+    height: calc(100% - 120px);
+    background-image: url(./img/mine.jpg);
+    overflow: auto;
+}
+
+section .section-chat {
+    height: 60px;
+    background-color: #f3eeea;
+}
