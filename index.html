@@ -59,14 +59,14 @@
                         <li v-for="(user,index) in users">
                             <div class="user-logo">
 
-                                <img :src=`img/avatar${users[indice].avatar}.jpg` alt="user logo">
+                                <img :src=`img/avatar${users[index].avatar}.jpg` alt="user logo">
 
                                 <div class="nav-name">
                                     <span>{{user.name}}</span>
-                                    <span class="subtitle">Ultimo messaggio inviato</span>
+                                    <span class="subtitle ">Ultimo messaggio inviato</span>
                                 </div>
                             </div>
-                            <div class="orario subtitle">
+                            <div class="orario subtitle ">
                                 12:00
                             </div>
                         </li>
@@ -80,38 +80,42 @@
 
             <section>
 
-                <div class="nav">
+                <div class="nav ">
 
-                    <div class="user-logo">
+                    <div class="user-logo ">
 
-                        <span class="logo">
-                            <img src="./img/avatar_1.jpg" alt="user logo">
+                        <span class="logo ">
+                            <img src="./img/avatar_1.jpg " alt="user logo ">
                         </span>
-                        <span class="nav-name">Michele</span>
-                        <span class="subtitle">Ultimo accesso oggi alle 12:00</span>
+                        <span class="nav-name ">Michele</span>
+                        <span class="subtitle ">Ultimo accesso oggi alle 12:00</span>
                     </div>
 
-                    <div class="setting-icons">
-                        <i class="fa-solid fa-search"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="setting-icons ">
+                        <i class="fa-solid fa-search "></i>
+                        <i class="fa-solid fa-paperclip "></i>
+                        <i class="fa-solid fa-ellipsis-vertical "></i>
                     </div>
                 </div>
 
                 <div class="main-section ">
 
+                    <div class="my-message">Hai portato a spasso il cane?</div>
+                    <div class="my-message">Ricordati di stendere i panni</div>
+                    <div class="user-message">Tutto fatto!</div>
+
                 </div>
 
-                <div class="section-chat">
+                <div class="section-chat ">
 
-                    <div class="left-section">
-                        <i class="fa-regular fa-face-smile"></i>
+                    <div class="left-section ">
+                        <i class="fa-regular fa-face-smile "></i>
                     </div>
 
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text " placeholder="Scrivi un messaggio ">
 
-                    <div class="right-section">
-                        <i class="fa-solid fa-microphone"></i>
+                    <div class="right-section ">
+                        <i class="fa-solid fa-microphone "></i>
                     </div>
 
                 </div>
