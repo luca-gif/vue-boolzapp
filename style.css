@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
 
 /* debug */
 
@@ -36,9 +40,23 @@ main {
 }
 
 .container .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 60px;
+    padding: 10px;
     background-color: #eaeaea;
     border: 1px solid rgb(200, 200, 200);
+}
+
+.container .nav .nav-name {
+    font-size: 13px;
+}
+
+.container .nav i {
+    padding: 0 5px;
+    font-size: 18px;
+    color: #b1b1b1;
 }
 
 aside {
@@ -50,10 +68,65 @@ aside .aside-top {
     height: 110px;
 }
 
+aside .aside-top .notifiche {
+    background-color: #8edafc;
+    height: 60px;
+    padding: 10px;
+}
+
+aside .aside-top .notifiche p {
+    font-size: 13px;
+}
+
+aside .aside-top .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    height: 50px;
+}
+
+aside .aside-top .search input {
+    width: 420px;
+    height: 30px;
+    padding-left: 60px;
+}
+
+aside .aside-top .search input::placeholder {
+    font-size: 11px;
+}
+
+aside .aside-top .search i {
+    position: absolute;
+    left: 30px;
+    color: #b1b1b1;
+}
+
 aside .user-list {
     height: calc(100% - 170px);
     background-color: #fff;
-    overflow: auto;
+    overflow-y: scroll;
+}
+
+aside .user-list li {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(223, 223, 223);
+}
+
+aside .user-list li:hover {
+    background-color: #eaeaea;
+}
+
+aside .user-list li .user-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+aside .user-list li .user-logo .nav-name {
+    display: flex;
+    flex-direction: column;
 }
 
 section {
@@ -64,10 +137,27 @@ section {
 section .main-section {
     height: calc(100% - 120px);
     background-image: url(./img/mine.jpg);
-    overflow: auto;
+    overflow: scroll;
 }
 
 section .section-chat {
     height: 60px;
     background-color: #f3eeea;
+}
+
+img {
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+.subtitle {
+    color: grey;
+    font-size: 10px;
+    padding: 5px 0;
+}
+
+i {
+    cursor: pointer;
 }
