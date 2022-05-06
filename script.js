@@ -2,6 +2,7 @@ const root = new Vue({
     el: "#root",
     data: {
         activeUser: 0,
+        text: "",
         users: [{
                 name: "Michele",
                 avatar: "_1",
@@ -156,5 +157,23 @@ const root = new Vue({
                 ],
             },
         ],
+    },
+    methods: {
+        addMessage(text, activeUser) {
+            const newMessage = {
+                date: "10/01/2020 15:51:00",
+                message: text,
+                status: "sent",
+            };
+
+            if (text.length > 0) {
+                setTimeout(function() {
+                    console.log("OK");
+                }, 1000);
+
+                this.users[activeUser].messages.push(newMessage);
+                this.text = "";
+            }
+        },
     },
 });

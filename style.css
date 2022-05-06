@@ -169,23 +169,27 @@ i {
     cursor: pointer;
 }
 
+input:focus {
+    outline: none;
+}
+
 .message {
     background-color: #fff;
     margin: 5px 0;
     padding: 16px;
     border-radius: 10px;
     width: 250px;
-    font-size: 12px;
+    font-size: 13px;
     min-width: 40%;
     max-width: 60%;
     clear: both;
 }
 
-.message.received {
+.message.sent {
     background-color: #d5f9ba;
     float: right;
 }
 
-.message.send {
+.message.received {
     float: left;
 }
