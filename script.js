@@ -159,21 +159,34 @@ const root = new Vue({
         ],
     },
     methods: {
-        addMessage(text, activeUser) {
+        /* Aggiunge il messaggio */
+
+        addMessage(text) {
             const newMessage = {
                 date: "10/01/2020 15:51:00",
                 message: text,
                 status: "sent",
             };
 
-            if (text.length > 0) {
-                setTimeout(function() {
-                    console.log("OK");
-                }, 1000);
+            /* Controllo input e scateno Timing Function */
 
-                this.users[activeUser].messages.push(newMessage);
+            if (text.length > 0) {
+                setTimeout(this.replyMessage, 1000);
+
+                this.users[this.activeUser].messages.push(newMessage);
                 this.text = "";
             }
+        },
+
+        /* Funzione risposta automatica */
+
+        replyMessage() {
+            const answer = {
+                date: "10/01/2020 15:51:00",
+                message: "Ok",
+                status: "received",
+            };
+            this.users[this.activeUser].messages.push(answer);
         },
     },
 });
