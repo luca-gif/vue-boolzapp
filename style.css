@@ -4,15 +4,12 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Lato', sans-serif;
-}
-
 .wrapper {
-    background-image: linear-gradient(#009688, #d6dbd8);
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #d6dbd8 15vh, #d6dbd8 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Lato', sans-serif;
     height: 100vh;
 }
 
@@ -68,10 +65,11 @@ aside .aside-top .search {
     justify-content: center;
     background-color: #f2f2f2;
     height: 50px;
+    position: relative;
 }
 
 aside .aside-top .search input {
-    width: 420px;
+    width: 95%;
     height: 30px;
     padding-left: 60px;
     border: 0;
@@ -83,14 +81,14 @@ aside .aside-top .search input::placeholder {
 
 aside .aside-top .search i {
     position: absolute;
-    left: 180px;
+    left: 30px;
     color: #b1b1b1;
 }
 
 aside .user-list {
     height: calc(100% - 170px);
     background-color: #fff;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 aside .user-list li {
@@ -125,8 +123,7 @@ section .main-section {
     height: calc(100% - 115px);
     background-image: url(./img/mine.jpg);
     padding: 50px;
-    display: flex;
-    flex-direction: column;
+    overflow-y: scroll;
 }
 
 section .section-chat {
@@ -159,6 +156,7 @@ img {
     border-radius: 50%;
     vertical-align: middle;
     margin-right: 15px;
+    cursor: pointer;
 }
 
 .subtitle {
@@ -171,20 +169,23 @@ i {
     cursor: pointer;
 }
 
-.my-message {
-    background-color: #d5f9ba;
-    margin: 5px 0;
-    padding: 16px;
-    border-radius: 10px;
-    width: 250px;
-    font-size: 12px;
-}
-
-.user-message {
+.message {
     background-color: #fff;
     margin: 5px 0;
     padding: 16px;
     border-radius: 10px;
     width: 250px;
     font-size: 12px;
+    min-width: 40%;
+    max-width: 60%;
+    clear: both;
+}
+
+.message.received {
+    background-color: #d5f9ba;
+    float: right;
+}
+
+.message.send {
+    float: left;
 }

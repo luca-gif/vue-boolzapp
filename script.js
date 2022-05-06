@@ -1,7 +1,7 @@
 const root = new Vue({
     el: "#root",
     data: {
-        indice: 0,
+        activeUser: 0,
         users: [{
                 name: "Michele",
                 avatar: "_1",

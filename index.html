@@ -56,10 +56,10 @@
                 <div class="user-list">
                     <ul>
 
-                        <li v-for="(user,index) in users">
+                        <li @click="activeUser = index" v-for="(user,index) in users">
                             <div class="user-logo">
 
-                                <img :src=`img/avatar${users[index].avatar}.jpg` alt="user logo">
+                                <img :src=`img/avatar${users[index].avatar}.jpg` :alt="user.name">
 
                                 <div class="nav-name">
                                     <span>{{user.name}}</span>
@@ -98,11 +98,11 @@
                     </div>
                 </div>
 
+                <!-- Creo messaggi in base all'utente -->
+
                 <div class="main-section ">
 
-                    <div class="my-message">Hai portato a spasso il cane?</div>
-                    <div class="my-message">Ricordati di stendere i panni</div>
-                    <div class="user-message">Tutto fatto!</div>
+                    <div v-for="message in users[activeUser].messages" class="message" :class="message.status">{{message.message}}</div>
 
                 </div>
 
