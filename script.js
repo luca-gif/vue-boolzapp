@@ -2,7 +2,11 @@ const root = new Vue({
     el: "#root",
     data: {
         activeUser: 0,
+
         text: "",
+
+        time: "",
+
         users: [{
                 name: "Michele",
                 avatar: "_1",
@@ -163,7 +167,7 @@ const root = new Vue({
 
         addMessage(text) {
             const newMessage = {
-                date: "10/01/2020 15:51:00",
+                date: this.time,
                 message: text,
                 status: "sent",
             };
@@ -182,11 +186,37 @@ const root = new Vue({
 
         replyMessage() {
             const answer = {
-                date: "10/01/2020 15:51:00",
-                message: "Ok",
+                date: this.time,
+                message: "Ok!",
                 status: "received",
             };
             this.users[this.activeUser].messages.push(answer);
         },
+
+        /* Funzione Data e Ora Attuale */
+
+        currentData() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const day = now.getDate();
+            const month = now.getMonth() + 1;
+            const year = now.getFullYear();
+
+            if (seconds < 10) {
+                this.time = `${day}/${month}/${year} ${hours}:${minutes} :0${seconds}`;
+            } else if (minutes < 10) {
+                this.time = `${day}/${month}/${year} ${hours} :0${minutes}:${seconds}`;
+            } else if (hours < 10) {
+                this.time = `${day}/${month}/${year} 0${hours}:${minutes}:${seconds}`;
+            } else {
+                this.time = `${day}/${month}/${year} ${hours}:${minutes} ${seconds}`;
+            }
+        },
+    },
+
+    mounted() {
+        this.currentData();
     },
 });

@@ -24,12 +24,11 @@
             <!-- Creo la parte SX -->
 
             <aside class="users">
-
                 <div class="nav">
 
                     <div class="user-logo">
-                        <img src="./img/avatar_io.jpg" alt="user logo">
-                        <span class="nav-name">Sofia</span>
+                        <img src="./img/avatar_2.jpg" alt="user logo">
+                        <span class="nav-name">Luca</span>
                     </div>
 
                     <div class="setting-icons">
@@ -42,13 +41,16 @@
                 <div class="aside-top">
 
                     <div class="notifiche">
-                        <p>Ricevi notifiche di nuovi messaggi</p>
-                        <u class="subtitle">Attiva notifiche desktop</u>
+                        <i class="fa-solid fa-bell-slash"></i>
+                        <div class="notifiche-text">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <u class="subtitle">Attiva notifiche desktop</u>
+                        </div>
                     </div>
 
                     <div class="search">
                         <i class="fa-solid fa-search"></i>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca tra i contatti">
                     </div>
 
                 </div>
@@ -56,18 +58,20 @@
                 <div class="user-list">
                     <ul>
 
+                        <!-- Ciclo tutti gli utenti -->
+
                         <li @click="activeUser = index" v-for="(user,index) in users">
                             <div class="user-logo">
 
-                                <img :src=`img/avatar${users[index].avatar}.jpg` :alt="user.name">
+                                <img :src=`./img/avatar${users[index].avatar}.jpg` :alt="user.name">
 
                                 <div class="nav-name">
                                     <span>{{user.name}}</span>
-                                    <span class="subtitle ">Ultimo messaggio inviato</span>
+                                    <span class="subtitle ">{{user.messages[0].message}}</span>
                                 </div>
                             </div>
                             <div class="orario subtitle ">
-                                12:00
+                                06/05/2022 12:00
                             </div>
                         </li>
 
@@ -85,24 +89,29 @@
                     <div class="user-logo ">
 
                         <span class="logo ">
-                            <img src="./img/avatar_1.jpg " alt="user logo ">
+                            <img :src=`./img/avatar${users[activeUser].avatar}.jpg` :alt="users[activeUser].name">
                         </span>
-                        <span class="nav-name ">Michele</span>
+                        <span class="nav-name ">{{users[activeUser].name}}</span>
                         <span class="subtitle ">Ultimo accesso oggi alle 12:00</span>
                     </div>
 
-                    <div class="setting-icons ">
-                        <i class="fa-solid fa-search "></i>
-                        <i class="fa-solid fa-paperclip "></i>
-                        <i class="fa-solid fa-ellipsis-vertical "></i>
+                    <div class="setting-icons">
+                        <i class="fa-solid fa-search"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
 
-                <!-- Creo messaggi in base all'utente -->
+                <!-- Ciclo messaggi in base all'utente -->
 
                 <div class="main-section ">
 
-                    <div v-for="message in users[activeUser].messages" class="message" :class="message.status">{{message.message}}</div>
+                    <div v-for="message in users[activeUser].messages" class="message" :class="message.status">{{message.message}}
+
+                        <div class="orario subtitle ">
+                            {{message.date}}
+                        </div>
+                    </div>
 
                 </div>
 
@@ -112,24 +121,15 @@
                         <i class="fa-regular fa-face-smile "></i>
                     </div>
 
-                    <input v-model="text" @keyup.enter.trim="addMessage(text,activeUser)" type="text " placeholder="Scrivi un messaggio ">
+                    <input v-model="text" @keyup.enter.trim="addMessage(text,activeUser), currentData()" type="text " placeholder="Scrivi un messaggio ">
 
                     <div class="right-section ">
                         <i class="fa-solid fa-microphone "></i>
                     </div>
 
                 </div>
-
             </section>
-
-
         </div>
-
-
-
-
-
-
     </div>
     <script src="script.js "></script>
 </body>

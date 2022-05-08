@@ -53,6 +53,16 @@ aside .aside-top .notifiche {
     background-color: #8edafc;
     height: 60px;
     padding: 10px;
+    display: flex;
+}
+
+aside .aside-top .notifiche i {
+    background-color: #fff;
+    color: #8edafc;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 aside .aside-top .notifiche p {
@@ -126,6 +136,25 @@ section .main-section {
     overflow-y: scroll;
 }
 
+section .message {
+    background-color: #fff;
+    margin: 5px 0;
+    padding: 16px;
+    border-radius: 10px;
+    width: 250px;
+    font-size: 13px;
+    min-width: 40%;
+    max-width: 60%;
+    clear: both;
+    position: relative;
+}
+
+section .main-section .orario {
+    position: absolute;
+    right: 8px;
+    font-size: 9px;
+}
+
 section .section-chat {
     display: flex;
     justify-content: space-between;
@@ -163,6 +192,7 @@ img {
     color: grey;
     font-size: 10px;
     padding: 5px 0;
+    cursor: default;
 }
 
 i {
@@ -171,18 +201,6 @@ i {
 
 input:focus {
     outline: none;
-}
-
-.message {
-    background-color: #fff;
-    margin: 5px 0;
-    padding: 16px;
-    border-radius: 10px;
-    width: 250px;
-    font-size: 13px;
-    min-width: 40%;
-    max-width: 60%;
-    clear: both;
 }
 
 .message.sent {
