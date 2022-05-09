@@ -5,8 +5,6 @@ const root = new Vue({
 
         text: "",
 
-        time: "",
-
         search: "",
 
         users: [{
@@ -169,7 +167,7 @@ const root = new Vue({
 
         addMessage(text) {
             const newMessage = {
-                date: this.time,
+                date: this.currentData(),
                 message: text,
                 status: "sent",
             };
@@ -188,7 +186,7 @@ const root = new Vue({
 
         replyMessage() {
             const answer = {
-                date: this.time,
+                date: this.currentData(),
                 message: "Ok!",
                 status: "received",
             };
@@ -206,6 +204,7 @@ const root = new Vue({
         /* Funzione Data e Ora Attuale */
 
         currentData() {
+            let time = "";
             const now = new Date();
             const hours = now.getHours();
             const minutes = now.getMinutes();
@@ -215,18 +214,16 @@ const root = new Vue({
             const year = now.getFullYear();
 
             if (seconds < 10) {
-                this.time = `${day}/${month}/${year} ${hours}:${minutes} :0${seconds}`;
+                time = `${day}/${month}/${year} ${hours}:${minutes} :0${seconds}`;
             } else if (minutes < 10) {
-                this.time = `${day}/${month}/${year} ${hours} :0${minutes}:${seconds}`;
+                time = `${day}/${month}/${year} ${hours} :0${minutes}:${seconds}`;
             } else if (hours < 10) {
-                this.time = `${day}/${month}/${year} 0${hours}:${minutes}:${seconds}`;
+                time = `${day}/${month}/${year} 0${hours}:${minutes}:${seconds}`;
             } else {
-                this.time = `${day}/${month}/${year} ${hours}:${minutes} ${seconds}`;
+                time = `${day}/${month}/${year} ${hours}:${minutes} ${seconds}`;
             }
-        },
-    },
 
-    mounted() {
-        this.currentData();
+            return time;
+        },
     },
 });

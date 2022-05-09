@@ -60,7 +60,7 @@
 
                         <!-- Ciclo tutti gli utenti -->
 
-                        <li v-if="user.name.includes(search)" @click="activeUser = index" v-for="(user,index) in users">
+                        <li v-show="user.name.toLowerCase().includes(search.toLowerCase())" @click="activeUser = index" v-for="(user,index) in users">
                             <div class="user-logo">
 
                                 <img :src=`./img/avatar${users[index].avatar}.jpg` :alt="user.name">
@@ -122,7 +122,7 @@
                         <i class="fa-regular fa-face-smile "></i>
                     </div>
 
-                    <input v-model.trim="text" @keyup.enter="addMessage(text,activeUser), currentData()" type="text " placeholder="Scrivi un messaggio ">
+                    <input v-model.trim="text" @keyup.enter="addMessage(text,activeUser)" type="text " placeholder="Scrivi un messaggio ">
 
                     <div class="right-section ">
                         <i class="fa-solid fa-microphone "></i>
