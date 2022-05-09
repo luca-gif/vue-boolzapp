@@ -107,7 +107,15 @@
 
                 <div class="main-section ">
 
-                    <div v-for="message in users[activeUser].messages" class="message" :class="message.status">{{message.message}}
+
+                    <div v-for="(message,index) in users[activeUser].messages" class="message" :class="message.status">{{message.message}}
+
+                        <div class="options">
+                            <div>Info messaggio</div>
+                            <div @click="cancella(index)">Cancella messaggio</div>
+                        </div>
+
+                        <i id="chevron" class="fa-solid fa-chevron-down"></i>
 
                         <div class="orario subtitle ">
                             {{message.date}}

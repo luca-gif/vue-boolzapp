@@ -149,6 +149,28 @@ section .message {
     position: relative;
 }
 
+section .main-section .message .options {
+    background-color: rgb(212, 212, 212);
+    margin: 5px 0;
+    padding: 6px 10px;
+    border-radius: 10px;
+    width: 150px;
+    font-size: 13px;
+    min-width: 40%;
+    max-width: 60%;
+    clear: both;
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+section .main-section .message i#chevron {
+    color: grey;
+    position: absolute;
+    top: 8px;
+    right: 15px;
+}
+
 section .main-section .orario {
     position: absolute;
     right: 8px;

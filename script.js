@@ -225,5 +225,9 @@ const root = new Vue({
 
             return time;
         },
+
+        cancella(index) {
+            this.users[this.activeUser].messages.splice(index, 1);
+        },
     },
 });
