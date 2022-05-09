@@ -7,6 +7,8 @@ const root = new Vue({
 
         time: "",
 
+        search: "",
+
         users: [{
                 name: "Michele",
                 avatar: "_1",
@@ -191,6 +193,14 @@ const root = new Vue({
                 status: "received",
             };
             this.users[this.activeUser].messages.push(answer);
+        },
+
+        /* Ultimo messaggio */
+
+        getLastMessage(index) {
+            const messages = this.users[index].messages;
+            const lastMessage = messages[messages.length - 1];
+            return lastMessage.message;
         },
 
         /* Funzione Data e Ora Attuale */

@@ -50,7 +50,7 @@
 
                     <div class="search">
                         <i class="fa-solid fa-search"></i>
-                        <input type="text" placeholder="Cerca tra i contatti">
+                        <input v-model="search" type="text" placeholder="Cerca tra i contatti">
                     </div>
 
                 </div>
@@ -60,14 +60,15 @@
 
                         <!-- Ciclo tutti gli utenti -->
 
-                        <li @click="activeUser = index" v-for="(user,index) in users">
+                        <li v-if="user.name.includes(search)" @click="activeUser = index" v-for="(user,index) in users">
                             <div class="user-logo">
 
                                 <img :src=`./img/avatar${users[index].avatar}.jpg` :alt="user.name">
 
                                 <div class="nav-name">
                                     <span>{{user.name}}</span>
-                                    <span class="subtitle ">{{user.messages[0].message}}</span>
+
+                                    <span class="subtitle ">{{getLastMessage(index)}}</span>
                                 </div>
                             </div>
                             <div class="orario subtitle ">
@@ -121,7 +122,7 @@
                         <i class="fa-regular fa-face-smile "></i>
                     </div>
 
-                    <input v-model="text" @keyup.enter.trim="addMessage(text,activeUser), currentData()" type="text " placeholder="Scrivi un messaggio ">
+                    <input v-model.trim="text" @keyup.enter="addMessage(text,activeUser), currentData()" type="text " placeholder="Scrivi un messaggio ">
 
                     <div class="right-section ">
                         <i class="fa-solid fa-microphone "></i>
