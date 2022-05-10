@@ -162,6 +162,15 @@ section .main-section .message .options {
     position: absolute;
     top: -40px;
     right: 0;
+    display: none;
+}
+
+section .main-section .message:hover .options {
+    display: inline-block;
+}
+
+section .main-section .message .options .delete {
+    cursor: pointer;
 }
 
 section .main-section .message i#chevron {

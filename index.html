@@ -110,12 +110,12 @@
 
                     <div v-for="(message,index) in users[activeUser].messages" class="message" :class="message.status">{{message.message}}
 
-                        <div class="options">
+                        <div v-if="" class="options">
                             <div>Info messaggio</div>
-                            <div @click="cancella(index)">Cancella messaggio</div>
+                            <div @click="cancella(index)" class="delete">Cancella messaggio</div>
                         </div>
 
-                        <i id="chevron" class="fa-solid fa-chevron-down"></i>
+                        <i @click="" id="chevron" class="fa-solid fa-chevron-down"></i>
 
                         <div class="orario subtitle ">
                             {{message.date}}
