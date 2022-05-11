@@ -113,6 +113,10 @@ aside .user-list li:hover {
     background-color: #eaeaea;
 }
 
+.selected {
+    background-color: #eaeaea;
+}
+
 aside .user-list li .user-logo {
     display: flex;
     justify-content: space-between;
@@ -162,11 +166,6 @@ section .main-section .message .options {
     position: absolute;
     top: -40px;
     right: 0;
-    display: none;
-}
-
-section .main-section .message:hover .options {
-    display: inline-block;
 }
 
 section .main-section .message .options .delete {

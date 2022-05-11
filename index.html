@@ -108,14 +108,14 @@
                 <div class="main-section ">
 
 
-                    <div v-for="(message,index) in users[activeUser].messages" class="message" :class="message.status">{{message.message}}
+                    <div @mouseleave="clickedMessage = {}" v-for="(message,index) in users[activeUser].messages" class="message" :class="message.status">{{message.message}}
 
-                        <div v-if="" class="options">
+                        <div v-if="message === clickedMessage" class="options">
                             <div>Info messaggio</div>
                             <div @click="cancella(index)" class="delete">Cancella messaggio</div>
                         </div>
 
-                        <i @click="" id="chevron" class="fa-solid fa-chevron-down"></i>
+                        <i @click="toggleOptions(message)" id="chevron" class="fa-solid fa-chevron-down"></i>
 
                         <div class="orario subtitle ">
                             {{message.date}}

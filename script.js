@@ -7,6 +7,8 @@ const root = new Vue({
 
         search: "",
 
+        clickedMessage: {},
+
         users: [{
                 name: "Michele",
                 avatar: "_1",
@@ -224,6 +226,14 @@ const root = new Vue({
             }
 
             return time;
+        },
+
+        toggleOptions(message) {
+            if (this.clickedMessage === message) {
+                this.clickedMessage = {}
+            } else {
+                this.clickedMessage = message;
+            }
         },
 
         cancella(index) {
